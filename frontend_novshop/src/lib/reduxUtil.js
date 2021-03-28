@@ -16,7 +16,7 @@ export const createRequestSaga = (type, request) => {
     return function* (action) {
         yield put(startLoading(type));  // 로딩 시작
         try {
-            // ▼ res.status가 정상범위가 아니면 바로 catch 문으로 가는듯.            
+            // ▼ res.status가 정상범위가 아니면 바로 catch 문으로 가는듯.           
             const response = yield call(request, action.payload);   
 
             yield put({
